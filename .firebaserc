@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sportshub-6db31": {
+      "hosting": {
+        "sportsHub": [
+          "sportshub-6db31"
+        ]
+      }
+    }
+  }
+}

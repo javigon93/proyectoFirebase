@@ -1,0 +1,31 @@
+<div class="flex min-h-screen px-40 items-center justify-center">
+
+
+  <div class="flex flex-col w-5/5 pt-20">
+    <video *ngIf="profileUrl != undefined" class="mx-auto h-80" width="720" height="430" controls>
+      <!-- <source src='{{profileUrl}} | async'> -->
+      <source src='{{profileUrl}}'>
+
+      Your browser does not support the video tag.
+    </video>
+    <div class="flex flex-row py-4">
+      <div class="text-xl">{{docInfo.title}}</div>
+      <div class="flex flex-col ml-auto">
+        <div class="text-m">Visitas: {{docInfo.visits}}</div>
+        <button class="flex flex-row items-center focus:outline-none focus:shadow-outline rounded-lg" (click)="addNewLike('documents/'+docId)">
+          <img src="../../assets/thumbsup.png" class="h-4 w-4" alt="">
+          <span class="ml-1">{{docInfo.likes}}</span>
+        </button>
+
+      </div>
+     
+    </div>
+    <div class="text-xl">Descripción del Vídeo</div>
+    <div class="text-sm text-justify">{{docInfo.description}}
+    <div class="text-sm">Licencias</div>
+    <div class="text-xs">Licensed under the Creative Commons Attribution license\nhttp://www.bigbuckbunny.org</div>
+    </div>
+    <app-comment-section [docId]= "docId" [docInfo]="docInfo"></app-comment-section>
+  </div>
+  
+</div>

@@ -1,0 +1,117 @@
+<style>
+  .pattern {
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231b0c34' fill-opacity='0.11' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #CBD5E0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2D3748;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+  }
+</style>
+
+
+<main class="font-sans bg-white">
+  <div>
+    <header class="bg-white shadow border-t-4 border-yellow-600">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <a class="flex items-center text-gray-800 hover:text-indigo-600" href="#">
+              <svg class="h-6 w-6 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+
+              <span class="mx-3 font-medium text-sm md:text-base">{{userInfo.firstName}} {{userInfo.lastName}}</span>
+            </a>
+          </div>
+          <div class="flex items-center -mx-2">
+            <a class="flex h-10 w-10 items-center mx-2 text-gray-800 hover:text-indigo-600" href={{userInfo.socialNetworks.facebook}}>
+              <img src="../../assets/facebook.png" alt="">
+            </a>
+
+            <a class="flex h-10 w-10 items-center mx-2 text-gray-800 hover:text-indigo-600" href={{userInfo.socialNetworks.twitter}}>
+              <img src="../../assets/twitter.png" alt="">
+            </a>
+
+            <a class="flex  h-10 w-10  items-center mx-2 text-gray-800 hover:text-indigo-600" href={{userInfo.socialNetworks.instagram}}>
+              <img src="../../assets/insta.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-white mt-20">
+      <div class="max-w-2xl px-6 text-center mx-auto">
+        <h2 class="text-3xl font-semibold text-gray-800">Hola, <span class="bg-yellow-500 text-white rounded px-1">Soy
+            {{userInfo.firstName}}</span> . Encantado/a de Conocerte.</h2>
+        <!-- <p class="text-gray-600 mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A aliquam veniam
+          suscipit eaque iure, eligendi harum expedita cupiditate sequi, culpa autem! Quaerat ex fugit iste suscipit
+          reiciendis, accusamus ipsum quae.</p> -->
+
+        <div class="flex flex-col place-items-center mt-16 ">
+          <img class="rounded-full  h-32 w-32" src="{{userInfo.profilePicStorageURL}}" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-yellow-400 pattern py-20">
+      <div class="max-w-5xl px-6 mx-auto text-center">
+        <h2 class="text-2xl font-semibold text-white">Sobre Mí</h2>
+
+        <p class="text-gray-800 mt-4">{{userInfo.description}}</p>
+      </div>
+    </section>
+
+    <section class="bg-white py-20">
+      <div class="max-w-5xl px-6 mx-auto text-center">
+        <h2 class="text-2xl font-semibold text-gray-800">Últimos Posts</h2>
+
+        <div class="flex flex-col items-center justify-center mt-6">
+          <a *ngFor="let publication of userPublications" class="max-w-2xl w-full block bg-white shadow-md rounded-md border-t-4 border-yellow-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <div *ngIf="publication.documentType.code == 'VIDEO'" routerLink='/video/{{publication.eventId}}' class="flex items-center justify-between px-4 py-2">
+              <h3 class="text-lg font-medium text-gray-700">{{publication.title}}</h3>
+              <span class="block text-gray-600 font-light text-sm">{{formatDate(publication.creationDate)}}</span>
+            </div>
+            <div *ngIf="publication.documentType.code == 'RECIPE'" routerLink='/recipe/{{publication.eventId}}' class="flex items-center justify-between px-4 py-2">
+              <h3 class="text-lg font-medium text-gray-700">{{publication.title}}</h3>
+              <span class="block text-gray-600 font-light text-sm">{{formatDate(publication.creationDate)}}</span>
+            </div>
+            <div *ngIf="publication.documentType.code == 'ROUTINE'" routerLink='/routine/{{publication.eventId}}' class="flex items-center justify-between px-4 py-2">
+              <h3 class="text-lg font-medium text-gray-700">{{publication.title}}</h3>
+              <span class="block text-gray-600 font-light text-sm">{{formatDate(publication.creationDate)}}</span>
+            </div>
+          </a>
+          
+        </div>
+
+        <div class="flex items-center justify-center mt-12">
+          <a class="flex items-center text-gray-600 hover:underline hover:text-gray-500" href="#">
+            <span>View More</span>
+
+            <svg class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+  </div>
+</main>

@@ -1,0 +1,86 @@
+<div class="container px-6 py-10 mx-auto md:py-16">
+  <div class="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6">
+    <div class="w-full md:w-1/2">
+      <div class="max-w-lg">
+        <h1 class="text-2xl font-medium tracking-wide text-gray-800 md:text-4xl">
+          ¡Bienvenido a SportsHub!
+        </h1>
+        <p class="mt-2 text-gray-600">
+          Disfruta de un nuevo portal donde publicar todo lo relacionado con la salud y el deporte
+        </p>
+        <div class="grid gap-6 mt-8 sm:grid-cols-2">
+          <div *ngFor="let item of items" class="flex items-center space-x-6 text-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>{{item}}</span>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center w-full md:w-1/2">
+      <img
+        src=" https://sandbox-uploads.imgix.net/u/1621695270-0adfbca1241f87a26a6e94c14ae72065?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+        alt="training photo" class="w-full h-full max-w-2xl rounded" />
+    </div>
+  </div>
+</div>
+
+  
+<div class="container px-6 py-10 mx-auto md:py-16">
+  <div class="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6">
+    <div class="flex items-center justify-center w-full md:w-1/2">
+      <img
+        src="https://sandbox-uploads.imgix.net/u/1621695711-a8eb85b983ea4043cea48f76ab757604?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+        alt="social gym photo" class="w-full h-full max-w-2xl rounded" />
+    </div>
+    <div class="w-full md:w-1/2">
+      <div class="max-w-md mx-auto">
+        <h1 class="text-2xl font-medium tracking-wide text-gray-800 md:text-4xl">
+          ¿Por qué Nosotros?
+        </h1>
+        <p class="mt-5 leading-7 text-gray-600">
+          Somos una red para gente que desea comenzar a entrenar, y quiere algo de orientación amateur antes de nada,
+          intentando eliminar esa sensación de vergüenza previa a comenzar a hacer deporte, ¿Por Qué? Porque tus
+          entrenadores serán gene que seguro que han pasado lo mismo que tú... <br />
+          Aquí podrás encontrar:
+        </p>
+        <div class="grid gap-6 mt-8 sm:grid-cols-2">
+          <div *ngFor="let userType of userTypeList" class="flex items-center space-x-6 text-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>{{userType}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="max-w-3xl px-6 py-10 mx-auto">
+  <h1 class="text-2xl font-medium tracking-wide text-center text-gray-800 md:text-4xl">
+    ¡Anímate!
+  </h1>
+  <p class="mt-2 text-center text-gray-600">
+    Si tienes dudas contacta con nosotros.
+  </p>
+  <div class="flex flex-col mt-6 space-y-5 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-5">
+    <input type="text" placeholder="Name"
+      class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+    <input type="email" placeholder="E-Mail"
+      class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+  </div>
+  <textarea name="message" id="message" placeholder="Message"
+    class="w-full h-56 mt-5 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+    spellcheck="false"></textarea>
+  <div class="flex items-center justify-center mt-6">
+    <button
+      class="px-5 py-3 font-medium tracking-wide text-center text-white capitalize bg-blue-600 rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+      Contactar
+    </button>
+  </div>
+</div>

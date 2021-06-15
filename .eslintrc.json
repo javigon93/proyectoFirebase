@@ -1,0 +1,51 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
+    "strict": [
+      2,
+      "global"
+    ],
+    "no-restricted-syntax": [
+      "error",
+      "FunctionExpression",
+      "WithStatement"
+    ],
+    "no-console": 0,
+    "no-continue": 0
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script",
+    "ecmaFeatures": {
+      "modules": false
+    }
+  },
+  "plugins": [
+    "chai-expect"
+  ]
+}
